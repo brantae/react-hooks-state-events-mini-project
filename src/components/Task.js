@@ -1,11 +1,19 @@
 import React from "react";
 
-function Task() {
+//pass in text and category from task list
+//we don't need key as a prop
+function Task({ text, category, handleDelete }) {
+
+  const deleteButton = () => {
+    
+    handleDelete(text)
+  }
+
   return (
     <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" onClick={deleteButton}>X</button>
     </div>
   );
 }
